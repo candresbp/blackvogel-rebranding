@@ -111,6 +111,106 @@ function bv_enqueue_splide() {
 
 
 // ============================================================
+// TEAM SLIDER — Fix de inicialización Splide (The Raven Team)
+// ============================================================
+add_action( 'wp_footer', function() {
+    if ( ! is_page( 2136 ) ) return;
+    ?>
+    <script>
+    (function(){
+      'use strict';
+
+      var _flipped = null;
+
+      function bvFlip(card){
+        if(_flipped && _flipped !== card) _flipped.classList.remove('is-flipped');
+        card.classList.toggle('is-flipped');
+        _flipped = card.classList.contains('is-flipped') ? card : null;
+      }
+
+      function bvWireFlip(sliderEl){
+        sliderEl.querySelectorAll('.bv-flip-card').forEach(function(card){
+          ['bv-flip-more','bv-flip-close'].forEach(function(cls){
+            card.querySelectorAll('.'+cls).forEach(function(el){
+              var fresh = el.cloneNode(true);
+              el.parentNode.replaceChild(fresh, el);
+              fresh.addEventListener('click', function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                bvFlip(card);
+              });
+            });
+          });
+        });
+      }
+
+      function bvInitSlider(){
+        var sliderEl = document.querySelector('.bv-team-slider');
+        if(!sliderEl || typeof Splide === 'undefined') return;
+
+        var track = sliderEl.querySelector('.splide__track');
+        if(!track){
+          console.warn('[BVTeam] sin .splide__track');
+          return;
+        }
+
+        /* Limpiar estado previo de Splide para re-montar limpio */
+        ['is-initialized','is-active','is-overflow'].forEach(function(c){
+          sliderEl.classList.remove(c);
+        });
+        sliderEl.querySelectorAll('.splide__slide').forEach(function(s){
+          s.style.width      = '';
+          s.style.marginRight = '';
+        });
+        var list = sliderEl.querySelector('.splide__list');
+        if(list){ list.style.transform = ''; list.style.width = ''; }
+
+        var sp = new Splide(sliderEl, {
+          type:    'slide',
+          perPage: 3,
+          perMove: 1,
+          gap:     '24px',
+          pagination: true,
+          arrows:  false,
+          drag:    true,
+          breakpoints: {
+            1024: { perPage: 2 },
+            768:  { perPage: 1 }
+          }
+        });
+
+        sp.mount();
+        sliderEl.style.visibility = 'visible';
+        sliderEl._bvSp = sp;
+
+        /* Botones prev / next */
+        ['bv-team-prev','bv-team-next'].forEach(function(cls, i){
+          var btn = document.querySelector('.'+cls);
+          if(!btn) return;
+          var fresh = btn.cloneNode(true);
+          btn.parentNode.replaceChild(fresh, btn);
+          fresh.addEventListener('click', function(){ sp.go(i===0?'<':'>'); });
+        });
+
+        /* Flip */
+        bvWireFlip(sliderEl);
+
+        console.log('[BVTeam] montado con perPage:3');
+      }
+
+      /* Esperar window.load + 400 ms para garantizar que el inline script
+         (DOMContentLoaded + setTimeout 150ms) ya terminó */
+      window.addEventListener('load', function(){
+        setTimeout(bvInitSlider, 400);
+      });
+
+    })();
+    </script>
+    <?php
+}, 999 );
+
+
+// ============================================================
 // CACHE BUSTER — solo durante desarrollo, quitar antes de entregar
 // ============================================================
 function child_style() {

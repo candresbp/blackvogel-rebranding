@@ -1918,14 +1918,23 @@ h4 {
   position: relative !important;
 }
 
+/* Splide track: overflow hidden es requerido por Splide para clipping */
 .bv-team-slider .splide__track {
+  overflow: hidden !important;
+}
+
+/* Slides: overflow visible para que la sombra/halo del flip card se vea */
+.bv-team-slider .splide__slide {
   overflow: visible !important;
 }
 
-.bv-team-slider .splide__slide {
-  overflow: visible !important;
-  width: calc(25% - 18px) !important; /* 4 columnas con gap de 24px */
-  margin-right: 0 !important;
+/* Cards dentro de slides: forzar 100% para que llenen el slide */
+.bv-team-slider .splide__slide > .e-con {
+  --width: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  background-size: cover !important;
+  background-position: center top !important;
 }
 
 /* Flechas fuera */
@@ -1983,7 +1992,8 @@ h4 {
   transform: scale(1.15) !important;
 }
 
-/* Fix Splide visibility en bv-team-slider */
+/* Fix visibilidad: Splide oculta el slider hasta que monta */
+.bv-team-slider,
 .bv-team-slider.splide {
   visibility: visible !important;
 }
@@ -1992,23 +2002,9 @@ h4 {
   visibility: visible !important;
 }
 
-.bv-team-slider.splide .splide__track .splide__list .splide__slide {
-  width: 314px !important;
-  max-width: 314px !important;
-  min-width: 314px !important;
-}
-
-@media (max-width: 768px) {
-  .bv-team-slider.splide .splide__track .splide__list .splide__slide {
-    width: calc(100vw - 48px) !important;
-    max-width: 340px !important;
-    min-width: unset !important;
-  }
-}
-
+/* Splide lista: NO override overflow — Splide lo gestiona */
 .bv-team-slider .splide__list {
-  overflow: visible !important;
-  column-gap: 24px;
+  display: flex !important;
 }
 
 .bv-team-controls {
