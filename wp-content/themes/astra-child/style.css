@@ -227,6 +227,15 @@ img {
   padding-top: 0;
 }
 
+@media (max-width: 768px) {
+  .ast-site-identity img,
+  .custom-logo,
+  .site-header-primary-section-left img {
+    max-width: 180px !important;
+    height: auto !important;
+  }
+}
+
 .ast-grid-right-section {
   justify-content: space-between;
 }
@@ -292,6 +301,14 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+footer a,
+footer p,
+.site-footer a,
+.site-footer p {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 /*Boton*/
 
@@ -1174,6 +1191,17 @@ h4 {
   background: url("/wp-content/uploads/2026/05/our-services-bg-x1.jpg") repeat;
 }
 
+@media (max-width: 768px) {
+  /* Reducir márgenes de 60–80px a valores razonables en mobile */
+  .page-id-1301 .e-con-boxed,
+  .page-id-1301 .elementor-section {
+    margin-top: 32px !important;
+    margin-bottom: 40px !important;
+    padding-top: 32px !important;
+    padding-bottom: 40px !important;
+  }
+}
+
 .services-card-heading h5 {
   text-transform: uppercase;
   font-weight: 600 !important;
@@ -1693,6 +1721,22 @@ h4 {
   font-size: 1.25rem !important;
 }
 
+@media (max-width: 768px) {
+  /* Imagen hero 968×839 — limitar alto para no empujar el formulario fuera del fold */
+  .page-id-2042 .elementor-widget-image img {
+    max-height: 280px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  /* Sección Let's Chat — padding mínimo para que el email no toque los bordes */
+  .page-id-2042 .e-con-full {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
 /* ============================================================
    The raven Team - Sections
    ============================================================ */
@@ -2001,6 +2045,30 @@ h4 {
   color: var(--bv-black) !important;
 }
 
+/* SVG dentro de los botones — más visible */
+.bv-team-prev svg,
+.bv-team-next svg {
+  width: 20px !important;
+  height: 20px !important;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  /* Slider full-width en mobile para evitar overflow */
+  .elementor-2136 .elementor-element-96157cc,
+  .bv-team-slider {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Garantizar área táctil mínima en los controles */
+  .bv-team-prev,
+  .bv-team-next {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+}
+
 .elementor-2136 .elementor-element.elementor-element-4989ea3 {
   align-items: end;
 }
@@ -2073,6 +2141,27 @@ h4 {
   padding: 7.5px 20px !important;
   background: var(--bv-white) !important;
   color: var(--bv-black);
+}
+
+@media (max-width: 768px) {
+  /* Banner 1024×600 — evitar scroll horizontal */
+  .page-id-2422 img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Fila de 5 logos partners — permitir salto de línea */
+  .page-id-2422 .e-flex {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 16px !important;
+  }
+
+  .page-id-2422 .e-flex > .e-con {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: 120px !important;
+  }
 }
 
 /* ============================================================
