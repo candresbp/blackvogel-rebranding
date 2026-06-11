@@ -2440,4 +2440,128 @@ h4 {
   [data-section="section-header-mobile-trigger"] .ast-button-wrap .ast-mobile-menu-trigger-fill{
     background: var(--bv-gray-light);
   }
+
+}
+
+/* ============================================================
+   HERO SECTIONS — MOBILE ≤922px
+   Ocultar imágenes decorativas, centrar contenido,
+   extender background image para que cubra el texto.
+   ============================================================ */
+
+@media (max-width: 922px) {
+
+  /* ── HOMEPAGE: colapsar grid 2→1 col, ocultar pájaro ──────── */
+
+  #hero {
+    --e-con-grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  /* Columna decorativa del pájaro (homepage) */
+  .elementor-element-5bec9f2 {
+    display: none !important;
+  }
+
+  /* Columna de texto: ocupa 100%, centra */
+  .elementor-element-718999f {
+    --width: 100% !important;
+    --content-width: 100% !important;
+    --text-align: center !important;
+    width: 100% !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  /* ── ABOUT MARIANA: colapsar grid 2→1 col, ocultar portrait ── */
+
+  #hero-about {
+    --e-con-grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  /* Columna con el portrait de Mariana */
+  .elementor-element-a79c790 {
+    display: none !important;
+  }
+
+  /* Columna de texto: ocupa 100%, centra */
+  .elementor-element-a78edc9 {
+    --width: 100% !important;
+    --content-width: 100% !important;
+    --text-align: center !important;
+    width: 100% !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  /* ── CONTACT: ocultar pájaro, centrar columnas restantes ───── */
+
+  .page-id-2042 .elementor-element-5954e52 {
+    min-height: auto !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    --text-align: center !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  /* Columna del pájaro decorativo (contact) */
+  .elementor-element-cfd1261 {
+    display: none !important;
+  }
+
+  /* Las dos columnas restantes se expanden al 100% */
+  .page-id-2042 .elementor-element-1c583cb,
+  .page-id-2042 .elementor-element-3551e77 {
+    --width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* ── DARTE WEBINARS: ocultar banner, colapsar grid interno ─── */
+
+  .page-id-2422 .elementor-element-85f2c38 {
+    min-height: auto !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    --text-align: center !important;
+    text-align: center !important;
+  }
+
+  /* Imagen del banner World Tour */
+  .page-id-2422 .elementor-element-174752f {
+    display: none !important;
+  }
+
+  /* Grid interno col texto + imagen → solo texto */
+  .page-id-2422 .elementor-element-d5f9a72 {
+    --e-con-grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── HEROES DE COLUMNA ÚNICA: centrar y extender background ── */
+
+  .elementor-element-c03a638,   /* Services         */
+  .elementor-element-1dae522,   /* About Us         */
+  .elementor-element-d18d7a5,   /* DARTE Series     */
+  .elementor-element-60ef657,   /* Events           */
+  .elementor-element-1a16409,   /* Sustainability / Policy / Publications */
+  .elementor-element-f613d56 {  /* Speaking         */
+    min-height: auto !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    --text-align: center !important;
+    text-align: center !important;
+  }
+
 }
