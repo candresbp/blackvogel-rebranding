@@ -2459,8 +2459,6 @@ h4 {
     min-height: auto !important;
     background-size: cover !important;
     background-position: center top !important;
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
   }
 
   /* Columna decorativa del pájaro (homepage) */
@@ -2473,7 +2471,9 @@ h4 {
     --width: 100% !important;
     --content-width: 100% !important;
     --text-align: center !important;
+    --align-items: center !important;
     width: 100% !important;
+    padding-top: 20px !important;
     text-align: center !important;
     align-items: center !important;
   }
@@ -2486,8 +2486,6 @@ h4 {
     min-height: auto !important;
     background-size: cover !important;
     background-position: center top !important;
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
   }
 
   /* Columna con el portrait de Mariana */
@@ -2500,7 +2498,9 @@ h4 {
     --width: 100% !important;
     --content-width: 100% !important;
     --text-align: center !important;
+    --align-items: center !important;
     width: 100% !important;
+    padding-top: 20px !important;
     text-align: center !important;
     align-items: center !important;
   }
@@ -2521,11 +2521,16 @@ h4 {
     display: none !important;
   }
 
-  /* Las dos columnas restantes se expanden al 100% */
+  /* Las dos columnas restantes se expanden al 100% y centran */
   .page-id-2042 .elementor-element-1c583cb,
   .page-id-2042 .elementor-element-3551e77 {
     --width: 100% !important;
+    --text-align: center !important;
+    --align-items: center !important;
     width: 100% !important;
+    padding-top: 20px !important;
+    text-align: center !important;
+    align-items: center !important;
   }
 
   /* ── DARTE WEBINARS: ocultar banner, colapsar grid interno ─── */
@@ -2547,9 +2552,12 @@ h4 {
   .page-id-2422 .elementor-element-d5f9a72 {
     --e-con-grid-template-columns: repeat(1, 1fr) !important;
     grid-template-columns: 1fr !important;
+    padding-top: 20px !important;
+    text-align: center !important;
+    align-items: center !important;
   }
 
-  /* ── HEROES DE COLUMNA ÚNICA: centrar y extender background ── */
+  /* ── HEROES DE COLUMNA ÚNICA: centrar, extender bg, padding ── */
 
   .elementor-element-c03a638,   /* Services         */
   .elementor-element-1dae522,   /* About Us         */
@@ -2561,6 +2569,20 @@ h4 {
     background-size: cover !important;
     background-position: center top !important;
     --text-align: center !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  /* .e-con-inner de los heroes de columna única: padding + centrado */
+  .elementor-element-c03a638 > .e-con-inner,
+  .elementor-element-1dae522 > .e-con-inner,
+  .elementor-element-d18d7a5 > .e-con-inner,
+  .elementor-element-60ef657 > .e-con-inner,
+  .elementor-element-1a16409 > .e-con-inner,
+  .elementor-element-f613d56 > .e-con-inner {
+    padding-top: 20px !important;
+    align-items: center !important;
+    --align-items: center !important;
     text-align: center !important;
   }
 
