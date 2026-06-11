@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where chromium *)",
+      "Bash(where chromium-browser *)",
+      "Bash(where google-chrome *)",
+      "Bash(npx playwright *)",
+      "Bash(node -e \"require\\('playwright'\\)\")",
+      "Bash(node *)",
+      "Bash(npx -y playwright@1.60.0 screenshot --browser chromium \"http://blackvogel.local/the-raven-team/\" \"C:/Users/losca/AppData/Local/Temp/team-page.png\")",
+      "Bash(npx *)"
+    ]
+  }
+}

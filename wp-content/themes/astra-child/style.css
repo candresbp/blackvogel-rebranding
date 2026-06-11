@@ -1,0 +1,2219 @@
+/*
+ Theme Name:   Astra Child — BlackVogel
+ Theme URI:    https://blackvogel.com
+ Description:  Child theme de Astra para el proyecto BlackVogel
+ Author:       Tu nombre
+ Author URI:   https://tudominio.com
+ Template:     astra
+ Version:      1.0.0
+ Text Domain:  astra-child
+*/
+
+/*
+ * IMPORTANTE: Este archivo debe tener el bloque de comentario de arriba
+ * exactamente así para que WordPress lo reconozca como child theme.
+ * "Template: astra" le dice a WP cuál es el tema padre.
+ *
+ * Todo tu CSS custom va DEBAJO de esta línea.
+ * No borres el bloque de arriba.
+*/
+
+/* ============================================================
+   TOKENS GLOBALES — BlackVogel
+   ============================================================ */
+:root {
+  --bv-cream: #ececec;
+  --bv-black: #1a1c14;
+  --bv-gold: #cba16e;
+  --bv-gold-dark: #9e7a43;
+  --bv-gray: #3d3a35;
+  --bv-gray-light: #888580;
+  --bv-white: #ffffff;
+  --bv-red: #f53f38;
+
+  --bv-radius-btn: 4px;
+  --bv-radius-card: 8px;
+
+  --bv-font-heading: "Cormorant Garamond", serif;
+  --bv-font-body: "Inter", sans-serif;
+  --bv-font-palatino:
+    "Palatino Linotype", "Palatino", "Book Antiqua", Georgia, serif;
+
+  --bv-spacing-section: 100px;
+  --bv-max-width: 1200px;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+body {
+  background-color: var(--bv-cream) !important;
+  color: var(--bv-black);
+  font-family: var(--bv-font-body);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--bv-font-palatino) !important;
+  font-weight: 400 !important;
+  line-height: 1.15;
+}
+
+h1 {
+  color: var(--bv-black) !important;
+  line-height: 102% !important;
+}
+
+h6 {
+  font-family: var(--bv-font-body) !important;
+  color: var(--bv-gold) !important;
+  font-weight: 600 !important;
+}
+
+a {
+  color: var(--bv-gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--bv-gold-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.sub-menu {
+  border-radius: 6px;
+  padding: 10px 0px;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #ececec !important;
+}
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+
+/* Primario — fondo dorado */
+.bv-btn-primary,
+.elementor-button.bv-btn-primary {
+  background-color: var(--bv-gold) !important;
+  color: var(--bv-white) !important;
+  border: none !important;
+  border-radius: var(--bv-radius-btn) !important;
+  padding: 14px 20px !important;
+  font-family: var(--bv-font-body) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background-color 0.2s ease !important;
+}
+
+.bv-btn-primary:hover,
+.elementor-button.bv-btn-primary:hover {
+  background-color: var(--bv-gold-dark) !important;
+}
+
+/* Secundario — outline negro */
+.bv-btn-secondary,
+.elementor-button.bv-btn-secondary {
+  background-color: transparent !important;
+  color: var(--bv-black) !important;
+  border: 1.5px solid var(--bv-black) !important;
+  border-radius: var(--bv-radius-btn) !important;
+  padding: 12px 24px !important;
+  font-family: var(--bv-font-body) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+  transition: all 0.2s ease !important;
+}
+
+.bv-btn-secondary:hover,
+.elementor-button.bv-btn-secondary:hover {
+  background-color: var(--bv-black) !important;
+  color: var(--bv-white) !important;
+}
+
+/* Outline blanco (para secciones oscuras) */
+.bv-btn-outline-white,
+.elementor-button.bv-btn-outline-white {
+  background-color: transparent !important;
+  color: var(--bv-white) !important;
+  border: 1.5px solid var(--bv-white) !important;
+  border-radius: var(--bv-radius-btn) !important;
+  padding: 12px 24px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+  transition: all 0.2s ease !important;
+}
+
+.bv-btn-outline-white:hover {
+  background-color: var(--bv-white) !important;
+  color: var(--bv-black) !important;
+}
+
+.elementor-button-text {
+  font-size: 14px !important;
+}
+
+/* ============================================================
+   SECCIONES DE FONDO
+   ============================================================ */
+
+/* Sección oscura (Services, Our Work, Footer) */
+.bv-section-dark {
+  background-color: var(--bv-black);
+  color: var(--bv-white);
+}
+
+.bv-section-dark h1,
+.bv-section-dark h2,
+.bv-section-dark h3 {
+  color: var(--bv-gold);
+}
+
+/* Sección crema (default) */
+.bv-section-cream {
+  background-color: var(--bv-cream);
+}
+
+/* ============================================================
+   UTILIDADES
+   ============================================================ */
+.bv-gold-text {
+  color: var(--bv-gold);
+}
+.bv-serif {
+  font-family: var(--bv-font-heading);
+}
+.bv-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+}
+
+/* Hero */
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.page-id-1287 #masthead .ast-primary-header-bar {
+  background-color: var(--bv-white) !important;
+}
+
+.ast-primary-header-bar {
+  background: #ececec !important;
+}
+
+.ast-desktop .ast-primary-header-bar.main-header-bar {
+  max-height: 125px;
+}
+
+.ast-site-identity {
+  padding-top: 0;
+}
+
+.ast-grid-right-section {
+  justify-content: space-between;
+}
+
+.site-header-primary-section-left {
+  max-width: 300px;
+}
+
+#ast-hf-menu-1 li a,
+.ast-custom-button {
+  text-transform: capitalize;
+  color: var(--bv-black) !important;
+  font-weight: 400;
+}
+
+/*Border del boton*/
+
+.ast-custom-button {
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Hover */
+
+#ast-desktop-header .ast-custom-button:hover {
+  border: solid 1px var(--bv-black) !important;
+}
+
+/* HEADER — Hover underline */
+#ast-hf-menu-1 .menu-link {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+#ast-hf-menu-1 .menu-link::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 20px;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--bv-red);
+  transition: width 0.25s ease;
+}
+
+#ast-hf-menu-1 .menu-link:hover::after,
+#ast-hf-menu-1 .current-menu-item .menu-link::after {
+  width: 80%;
+}
+
+#ast-hf-menu-1 li a:hover {
+  font-weight: 600;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer {
+  background-color: #1a1c14;
+  padding: 50px 0;
+}
+
+footer p {
+  margin: 0;
+}
+/*Boton*/
+
+.bv-back-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border: 1.5px solid var(--bv-gold);
+  border-radius: 6px;
+  background: transparent;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.bv-back-top:hover {
+  background-color: #b8935a;
+  color: #ffffff;
+}
+
+.bv-back-top__arrow {
+  color: var(--bv-gold);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 0;
+  font-size: 18px;
+  line-height: 15;
+  transition: border-color 0.2s ease;
+}
+
+.bv-back-top:hover .bv-back-top__arrow {
+  border-color: #ffffff;
+}
+
+.site-above-footer-wrap[data-section="section-above-footer-builder"]
+  .ast-builder-grid-row,
+.site-above-footer-wrap[data-section="section-above-footer-builder"]
+  .site-footer-section {
+  justify-items: right;
+}
+
+.footer-widget-area[data-section="section-fb-html-1"] {
+  padding-right: 17px;
+}
+
+.site-above-footer-wrap[data-section="section-above-footer-builder"]
+  .ast-builder-grid-row,
+.site-above-footer-wrap[data-section="section-above-footer-builder"]
+  .site-footer-section {
+  justify-items: center;
+}
+
+/*Menu*/
+
+.menu-footer li {
+  list-style: none;
+}
+
+.menu-footer li a {
+  color: #fff;
+}
+
+/*Linea en el top del footer*/
+
+.gradient {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.gradient .bv-border-top {
+  width: 72%;
+  height: 2px;
+  background: linear-gradient(to right, #f53f38 0%, #cba16e 50%, #f53f38 100%);
+}
+
+.site-footer .ast-builder-html-element p,
+li a {
+  font-size: 16px;
+}
+
+/* Copyright */
+
+.copyright {
+  font-size: 12px;
+}
+
+/*Linea en el top/bot services*/
+
+.bv-border-top-services {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, #ececec 0%, #cba16e 50%, #ececec 100%);
+}
+
+.bv-border-bot-services {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, #ececec 0%, #f53f38 50%, #ececec 100%);
+}
+
+/* ============================================================
+   HOME - SECTIONS
+   ============================================================ */
+
+/* BOTONES About — hover */
+
+#speaker .elementor-size-sm:hover {
+  color: var(--bv-white) !important;
+  border: solid 1px var(--bv-black);
+  box-shadow: 0 10 10px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn .elementor-size-sm:hover {
+  border: 1.5px solid var(--bv-gold) !important;
+  color: var(--bv-gold) !important;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+#more-about-bv-btn {
+  min-width: 200px !important;
+}
+
+/* ============================================================
+   OuUR WORK — SECTIONS
+   ============================================================ */
+
+/* OUR WORK — Cards hover */
+
+/* Contenedor de cada card */
+#our-work .elementor-widget-heading {
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+/* Imagen de fondo — aclarar en hover */
+#our-work .elementor-widget-heading:hover {
+  filter: brightness(1.5) !important;
+}
+
+/* Texto — deslizar a la derecha en hover */
+#our-work .elementor-widget-heading:hover .elementor-heading-title {
+  transform: translateX(8px);
+  transition: transform 0.6s ease;
+}
+
+#our-work .elementor-widget-heading .elementor-heading-title {
+  transition: transform 0.6s ease;
+}
+
+/* ============================================================
+   SERVICES COMPONENT — BlackVogel
+   ============================================================ */
+
+/* Wrapper principal */
+.bv-svc {
+  display: flex;
+  gap: 150px;
+  align-items: center;
+  padding: 32px;
+  min-height: 280px;
+}
+
+/* ── Lista izquierda ── */
+.bv-svc__list {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 440px;
+}
+
+.bv-svc__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-height: 280px; /* altura visible — ajustá según cuántos items querés mostrar */
+  overflow-y: auto; /* scroll vertical */
+}
+
+.bv-svc__items::-webkit-scrollbar {
+  display: none;
+}
+
+.bv-svc__item:first-child {
+  border-top: 1px solid #72757a;
+}
+
+/* Flechas arriba / abajo */
+.bv-svc__arrows {
+  background: none;
+  border: none;
+  color: #72757a !important;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 6px 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.bv-svc__arrows svg:hover {
+  color: var(--bv-white);
+}
+
+/* Cada item de la lista */
+.bv-svc__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid #72757a;
+  cursor: pointer;
+  position: relative;
+  transition: padding-left 0.25s ease;
+}
+
+/* Línea dorada a la izquierda en hover/activo */
+.bv-svc__item::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #cba16e;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.bv-svc__item:hover,
+.bv-svc__item.active {
+  padding-left: 10px;
+}
+
+.bv-svc__item:hover::before,
+.bv-svc__item.active::before {
+  opacity: 1;
+}
+
+/* Número */
+.bv-svc__num {
+  font-size: 12px;
+  color: #7a6e64;
+  min-width: 22px;
+  font-family: "Inter", sans-serif;
+  transition: color 0.2s ease;
+}
+
+.bv-svc__item:hover .bv-svc__num,
+.bv-svc__item.active .bv-svc__num {
+  color: #cba16e;
+}
+
+/* Nombre del servicio */
+.bv-svc__name {
+  font-size: 13px;
+  color: #7a6e64;
+  font-family: "Inter", sans-serif;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.bv-svc__item:hover .bv-svc__name {
+  color: #ffffff;
+}
+
+.bv-svc__item.active .bv-svc__name {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* ── Panel derecho ── */
+.bv-svc__panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Card */
+.bv-svc__card {
+  background: none;
+  border: 1px solid var(--bv-white);
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  max-width: 544px;
+  animation: bvSvcIn 0.28s ease;
+  height: 100%;
+}
+
+@keyframes bvSvcIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bv-svc__card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+/* Ícono con gradiente */
+.bv-svc__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  /* el background gradient se aplica inline desde el JS */
+}
+
+.bv-svc__card-num {
+  font-size: 24px;
+  color: #cba16e;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+.bv-svc__card-text {
+  font-size: 15px;
+  color: #ffffff;
+  line-height: 1.65;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+/* ── Responsive mobile ── */
+@media (max-width: 640px) {
+  .bv-svc {
+    flex-direction: column;
+    padding: 20px;
+    gap: 0;
+  }
+
+  .bv-svc__list {
+    flex: none;
+    width: 100%;
+  }
+
+  .bv-svc__item::before {
+    left: -20px;
+  }
+
+  .bv-svc__panel {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .bv-svc__card-text {
+    font-size: 14px;
+  }
+}
+
+/*Leadership*/
+
+/* ============================================================
+   LEADERSHIP & INITIATIVES ACCORDION — BlackVogel
+   Pegar en astra-child/style.css
+   ============================================================ */
+
+/* Wrapper de la sección */
+.bv-lead {
+  padding: 32px 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* Etiqueta superior roja */
+.bv-lead__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c0392b;
+  margin-bottom: 20px;
+}
+
+/* Grid 2 columnas */
+.bv-lead__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+/* Cada caja */
+.bv-lead__item {
+  border: 1px solid #c8c4bc;
+  border-radius: 12px;
+  background: none;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+  overflow: hidden;
+}
+
+/* Estado hover */
+.bv-lead__item:hover {
+  border-color: #abb1bd;
+  background: #fff;
+}
+
+/* Estado abierto */
+.bv-lead__item.is-open {
+  border-color: #1c1a17;
+  background: #ffffff;
+}
+
+/* Header de cada caja (título + ícono) */
+.bv-lead__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  gap: 12px;
+}
+
+/* Título */
+.bv-lead__title {
+  font-size: 20px;
+  font-weight: 400;
+  color: #9a9490;
+  line-height: 1.4;
+  transition:
+    color 0.2s ease,
+    font-weight 0.15s ease;
+}
+
+.bv-lead__item:hover .bv-lead__title {
+  color: var(--bv-black);
+  font-weight: 500;
+}
+
+.bv-lead__item.is-open .bv-lead__title {
+  color: var(--bv-black);
+  font-weight: 600;
+}
+
+/* Ícono +/- */
+.bv-lead__icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #abb1bd;
+  transition: color 0.2s ease;
+}
+
+.bv-lead__item:hover .bv-lead__icon,
+.bv-lead__item.is-open .bv-lead__icon {
+  color: var(--bv-black);
+}
+
+/* Cuerpo expandible */
+.bv-lead__body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease;
+}
+
+.bv-lead__item.is-open .bv-lead__body {
+  max-height: 600px;
+  opacity: 1;
+}
+
+/* Contenido interior */
+.bv-lead__content {
+  padding: 0 20px 20px;
+  border-top: 0.5px solid var(--bv-black);
+}
+
+/* Texto descriptivo */
+.bv-lead__text {
+  font-size: 16px;
+  color: var(--bv-black);
+  line-height: 1.7;
+  margin: 14px 0 16px;
+}
+
+/* Etiqueta sobre el link */
+.bv-lead__link-label {
+  font-size: 14px;
+  color: var(--bv-gold);
+  margin-bottom: 4px;
+}
+
+/* Link dorado */
+.bv-lead__link {
+  font-size: 14px;
+  color: var(--bv-gold);
+  text-decoration: none;
+  border-bottom: 1px solid var(--bv-gold);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.bv-lead__link:hover {
+  color: #9e7a43;
+  border-color: #9e7a43;
+}
+
+/* ── Responsive mobile ── */
+@media (max-width: 600px) {
+  .bv-lead__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*Speaker*/
+
+#speaker h2 {
+  color: var(--bv-white);
+  font-size: 4.75rem;
+  line-height: 68px;
+}
+
+#speaker #speaker-btn {
+  color: var(--bv-white);
+  width: 217px;
+  background-color: var(--bv-red) !important;
+  background-image: none;
+}
+
+#speaker .e-con-inner {
+  padding-bottom: 0;
+}
+
+.gradient .bv-spaeker-border-bot {
+  width: 73%;
+  height: 2px;
+  background: linear-gradient(to right, #f53f38 0%, #cba16e 50%, #f53f38 100%);
+}
+
+/* ============================================================
+   ABOUT - SECTIONS
+   ============================================================ */
+
+/* Hero */
+
+#hero-about h1 {
+  color: var(--bv-white) !important;
+  font-size: 3.75rem !important;
+}
+
+/* About */
+
+#about-about h5 {
+  text-transform: uppercase;
+  color: var(--bv-black) !important;
+  font-weight: bold !important;
+}
+
+/* Hover */
+
+#about-about .elementor-size-sm:hover {
+  border: 1.5px solid var(--bv-gold) !important;
+  color: var(--bv-gold) !important;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Leadership */
+
+#leadership-grid-container .card-img-des-btn {
+  min-width: 323px;
+}
+
+#leadership-grid-container .card-img-des-btn .e-con-full {
+  padding: 14px !important;
+  gap: 14px;
+  min-height: 273px;
+  border: solid 1px #abb1bd;
+}
+
+#leadership-grid-container .card-img-des-btn h5 {
+  color: var(--bv-black) !important;
+  line-height: 110% !important;
+}
+
+#leadership-grid-container .card-img-des-btn p {
+  margin-bottom: 4px !important;
+}
+
+#leadership-grid-container .card-img-des-btn .leadership-card-btn {
+  position: absolute;
+  bottom: 14px;
+}
+
+#leadership-grid-container
+  .card-img-des-btn
+  .elementor-widget-container
+  p
+  strong,
+#leadership-grid-container
+  .card-img-des-btn
+  .elementor-widget-container
+  strong {
+  text-transform: uppercase;
+  letter-spacing: 10% !important;
+}
+
+#leadership-grid-container
+  .card-img-des-btn
+  .leadership-card-btn
+  .elementor-size-sm {
+  background: none !important;
+  font-size: unset !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#leadership-grid-container
+  .card-img-des-btn
+  .leadership-card-btn
+  .elementor-button-text {
+  background: var(--bv-gold) !important;
+  border-radius: 8px;
+  padding: 7px 20px;
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+#leadership-grid-container
+  .card-img-des-btn
+  .leadership-card-btn
+  .elementor-button-text:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+  border: solid 1px var(--bv-black);
+}
+
+/* Awards */
+
+/* ============================================================
+   AWARDS CAROUSEL — BlackVogel
+   Pegar en astra-child/style.css
+   ============================================================ */
+
+/* Wrapper de la sección */
+.bv-awards {
+  padding: 40px 20px;
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+
+/* Título */
+.bv-awards__title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: #1c1a17;
+  margin-bottom: 32px;
+}
+
+/* Layout: flecha + track + flecha */
+.bv-awards__stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Flechas prev / next */
+.bv-awards__arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: none;
+  background: #dadbdd !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  color: var(--bv-black);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.bv-awards__arrow:hover,
+.bv-awards__arrow.is-active {
+  background: var(--bv-gold) !important;
+  border-color: none;
+  color: #ffffff;
+}
+
+/* Track — contenedor del carrusel */
+.bv-awards__track {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fila de slides */
+.bv-awards__slides {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cada slide */
+.bv-awards__slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.bv-awards__slide img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  background: #e0ddd8;
+}
+
+/* Gradiente oscuro inferior + texto superpuesto */
+.bv-awards__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 48px 24px 24px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  text-align: left;
+}
+
+.bv-awards__caption {
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Dots de navegación */
+.bv-awards__dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.bv-awards__dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50% !important;
+  background: #abb1bd !important;
+  border: none;
+  padding: 0 !important;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.bv-awards__dot.is-active {
+  background: var(--bv-gold) !important;
+  transform: scale(1.15);
+}
+
+/* ── Responsive mobile ── */
+@media (max-width: 600px) {
+  .bv-awards__stage {
+    gap: 10px;
+  }
+
+  .bv-awards__arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .bv-awards__slide img {
+    height: 260px;
+  }
+
+  .bv-awards__title {
+    font-size: 28px;
+  }
+}
+
+/* ============================================================
+   ABOUT US - SECTIONS
+   ============================================================ */
+
+h4 {
+  text-transform: uppercase;
+  font-family: Inter !important;
+  font-weight: 600 !important;
+  font-size: 1.25rem !important;
+}
+
+.about-us-btn-left .elementor-size-sm {
+  background: var(--bv-gold) !important;
+  color: var(--bv-black) !important;
+}
+
+.about-us-btn-right .elementor-size-sm {
+  background: var(--bv-white) !important;
+  color: var(--bv-black) !important;
+}
+
+/* Hover */
+
+.btn-black-hover .elementor-size-sm:hover {
+  color: var(--bv-black) !important;
+  border: solid 1px var(--bv-black);
+  background-color: var(--bv-gold) !important;
+  box-shadow: 0 10 10px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+  transition: transform 0.4s ease;
+}
+
+/* ============================================================
+   OUR SERVICES - SECTIONS
+   ============================================================ */
+
+/* Background*/
+
+.elementor-1301 {
+  background: url("http://blackvogel.local/wp-content/uploads/2026/05/our-services-bg-x1.jpg")
+    repeat;
+}
+
+.services-card-heading h5 {
+  text-transform: uppercase;
+  font-weight: 600 !important;
+  font-family: Inter !important;
+  letter-spacing: 10% !important;
+  line-height: 1.375rem !important;
+  font-size: 1.25rem !important;
+}
+
+/* SERVICES SLIDER — Splide overrides */
+.bv-services-slider {
+  overflow: hidden;
+}
+
+/* Dots */
+.bv-services-slider .splide__pagination__page {
+  background: #c8c4bc;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.bv-services-slider .splide__pagination__page.is-active {
+  background: #1c1a17;
+  transform: scale(1.15);
+}
+
+/* Flechas */
+.bv-services-slider .splide__arrow {
+  background: #f2f0eb;
+  border: 1px solid #d4cfca;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+  top: 45% !important;
+}
+
+.bv-services-slider .splide__arrow:hover {
+  background: #b8935a;
+  border-color: #b8935a;
+}
+
+.bv-services-slider .splide__arrow svg {
+  fill: #1c1a17;
+  transition: fill 0.2s ease;
+}
+
+.bv-services-slider .splide__arrow:hover svg {
+  fill: #ffffff;
+}
+
+.bv-services-slider .splide__arrow--prev {
+  right: calc(50% + 590px) !important;
+  left: unset !important;
+}
+
+.bv-services-slider .splide__arrow--next {
+  left: calc(50% + 590px) !important;
+  right: unset !important;
+}
+
+/* User */
+
+.slider-col-1 .slider-col-1-card,
+.slider-col-2 .slider-col-2-card {
+  width: 100% !important;
+  padding: 10px !important;
+  margin-right: 0 !important;
+  height: 100% !important;
+}
+
+.slider-col-1 {
+  padding: 10px !important;
+}
+
+.slider-col-1,
+.slider-col-2 {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.bv-services-slider .splide__slide {
+  width: 50% !important;
+}
+/* SERVICES SLIDER — Fix estilos rotos por Splide */
+
+/* Forzar grid 2 columnas en TODOS los slides */
+
+/* Dots */
+.bv-services-slider .splide__pagination {
+  display: flex !important;
+  gap: 8px !important;
+  justify-content: center !important;
+  margin-top: 16px !important;
+}
+
+.bv-services-slider .splide__pagination__page {
+  display: block !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background: #c8c4bc !important;
+  border: none !important;
+  padding: 0 !important;
+  transition: background 0.2s ease !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.bv-services-slider .splide__pagination__page.is-active {
+  background: #1c1a17 !important;
+  transform: scale(1.15) !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .bv-services-slider .splide__slide .e-flex {
+    flex-direction: column !important;
+  }
+  .bv-services-slider .splide__slide .e-flex > .e-con {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ============================================================
+   SPEAKING ENGAGEMENTS - Sections
+   ============================================================ */
+
+/*  SPEAKING ENGAGEMENTS VIDEO SLIDER — BlackVogel */
+
+.bv-speak-slider {
+  background: #1c1a17;
+  padding: 48px 40px;
+}
+
+/* Track */
+.bv-speak-slider .splide__track {
+  overflow: hidden !important;
+  border-radius: 8px;
+}
+
+/* Slides */
+.bv-speak-slider .splide__list {
+  display: flex !important;
+}
+
+.bv-speak-slider .splide__slide {
+  min-width: 100% !important;
+}
+
+/* Flechas */
+.bv-speak-slider .splide__arrow {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  border: 1px solid #ffffff33 !important;
+  background: transparent !important;
+  opacity: 1 !important;
+}
+
+.bv-speak-slider .splide__arrow:hover,
+.bv-speak-slider .splide__arrow.is-active {
+  background: #b8935a !important;
+  border-color: #b8935a !important;
+}
+
+.bv-speak-slider .splide__arrow svg {
+  fill: #ffffff !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.bv-speak-slider .splide__arrow--prev {
+  left: -60px !important;
+}
+
+.bv-speak-slider .splide__arrow--next {
+  right: -60px !important;
+}
+
+/* Dots */
+.bv-speak-slider .splide__pagination {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  margin-top: 20px !important;
+  bottom: unset !important;
+  position: relative !important;
+}
+
+.bv-speak-slider .splide__pagination__page {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 4px !important;
+  background: #ffffff44 !important;
+  border: none !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition:
+    width 0.3s ease,
+    background 0.3s ease !important;
+}
+
+.bv-speak-slider .splide__pagination__page.is-active {
+  width: 40px !important;
+  height: 8px !important;
+  background: #b8935a !important;
+  transform: none !important;
+}
+
+/* Speaking — flechas visibles fuera del track */
+.bv-speak-slider .splide__arrows {
+  position: relative;
+}
+
+.bv-speak-slider .splide__arrow {
+  position: absolute !important;
+  top: 40vh !important;
+  transform: translateY(-50%) !important;
+  opacity: 1 !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  border: 1px solid #ffffff33 !important;
+  background: transparent !important;
+  z-index: 10 !important;
+}
+
+.bv-speak-slider .splide__arrow--prev {
+  left: -60px !important;
+}
+
+.bv-speak-slider .splide__arrow--next {
+  right: -60px !important;
+  background: #b8935a !important;
+  border-color: #b8935a !important;
+}
+
+.bv-speak-slider .splide__arrow svg {
+  fill: #ffffff !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.bv-speak-slider .splide__arrow:hover {
+  background: #b8935a !important;
+  border-color: #b8935a !important;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .bv-speak-slider {
+    padding: 32px 16px;
+  }
+
+  .bv-speak-slider .splide__arrow--prev {
+    left: -16px !important;
+  }
+
+  .bv-speak-slider .splide__arrow--next {
+    right: -16px !important;
+  }
+}
+
+/* User */
+
+/* ============================================================
+   MODAL GRID — BlackVogel
+   Pegar en astra-child/style.css
+   ============================================================ */
+
+/* ── Cards del grid ── */
+.bv-grid__card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #2a2620;
+}
+
+.bv-grid__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.bv-grid__card:hover img {
+  transform: scale(1.04);
+  filter: brightness(0.8);
+}
+
+/* Gradiente inferior con título */
+.bv-grid__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 12px 12px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
+}
+
+.bv-grid__title {
+  font-size: 12px;
+  color: #ffffff;
+  line-height: 1.4;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+
+/* Ícono play — agregado por JS en cards de video */
+.bv-grid__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+  pointer-events: none;
+  color: #1c1a17;
+}
+
+.bv-grid__card:hover .bv-grid__play {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: #b8935a;
+  color: #ffffff;
+}
+
+/* ── Modal backdrop ── */
+.bv-modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 99999;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.bv-modal-backdrop.is-open {
+  display: flex;
+}
+
+/* ── Modal ── */
+.bv-modal {
+  background: #1c1a17;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 720px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: bvModalIn 0.25s ease;
+}
+
+@keyframes bvModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botón cerrar */
+.bv-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9e8e7a;
+  font-size: 22px;
+  line-height: 1;
+  transition: color 0.2s ease;
+  z-index: 1;
+}
+
+.bv-modal__close:hover {
+  color: #ffffff;
+}
+
+/* Video 16:9 */
+.bv-modal__video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  background: #000000;
+}
+
+.bv-modal__video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Imagen */
+.bv-modal__image {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+
+.bv-modal__image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Cuerpo del modal */
+.bv-modal__body {
+  padding: 20px 24px 28px;
+}
+
+.bv-modal__title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #cba16e;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.bv-modal__desc {
+  font-size: 14px;
+  color: #c8c4bc;
+  line-height: 1.7;
+  font-family: "Inter", sans-serif;
+}
+
+/* ── Responsive mobile ── */
+@media (max-width: 600px) {
+  .bv-modal {
+    max-height: 95vh;
+  }
+
+  .bv-modal__image img {
+    height: 200px;
+  }
+
+  .bv-modal__body {
+    padding: 16px 16px 24px;
+  }
+
+  .bv-modal__title {
+    font-size: 18px;
+  }
+}
+
+/* Ajuste max height img*/
+
+.page-id-1885 .elementor.elementor .e-con > .elementor-widget {
+  max-height: 195px;
+}
+
+/* Bg borde redondeado tio*/
+
+.page-id-1885 .elementor-1885 {
+  background-color: #ececec;
+}
+
+/* Estilos modales espeficivos*/
+
+[data-modal="bv-modal-19"] .bv-modal__image img {
+  object-fit: contain;
+}
+
+/* ============================================================
+   GET IN TOUCH - Sections
+   ============================================================ */
+
+/* H3 estilos */
+
+.page-id-2042 h3 b {
+  font-family: Inter !important;
+  font-size: 1.25rem !important;
+}
+
+/* ============================================================
+   The raven Team - Sections
+   ============================================================ */
+
+/* ============================================================
+   TEAM SLIDER — Flip Cards + Splide
+   Pegar en astra-child/style.css
+   ============================================================ */
+
+/* ── Card wrapper ── */
+
+.bv-flip-card {
+  position: relative !important;
+  height: 420px !important;
+  cursor: default !important;
+}
+
+/* ── Front y Back: apilados, transición con opacidad + scale ──
+   Usamos este enfoque en lugar de CSS 3D porque Elementor
+   rompe el contexto preserve-3d con overflow:hidden y will-change */
+.bv-flip-front,
+.bv-flip-back {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease !important;
+}
+
+/* Frente — visible */
+.bv-flip-front {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  z-index: 2 !important;
+}
+
+/* Reverso — oculto */
+.bv-flip-back {
+  opacity: 0 !important;
+  transform: scale(0.96) !important;
+  z-index: 1 !important;
+}
+
+/* Estado flipped */
+.bv-flip-card.is-flipped .bv-flip-front {
+  opacity: 0 !important;
+  transform: scale(0.96) !important;
+  z-index: 1 !important;
+}
+
+.bv-flip-card.is-flipped .bv-flip-back {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  z-index: 2 !important;
+}
+
+/* ── Overlay rojo sobre la foto del reverso ── */
+.bv-flip-back__overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(245, 63, 56, 0.82) !important;
+  z-index: 0 !important;
+}
+
+/* ── Contenido del reverso ── */
+.bv-flip-back__inner {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 24px 16px !important;
+}
+
+.bv-flip-back__content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  flex: 1 !important;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+
+.bv-flip-back__name {
+  font-family: "Inter", serif !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+}
+
+.bv-flip-back__role {
+  font-size: 16px !important;
+  color: #ffffff !important;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 700;
+  margin: 0 !important;
+  letter-spacing: 0.1em !important;
+}
+
+.bv-flip-back__bio {
+  font-size: 16px !important;
+  font-weight: 300 !important;
+  color: #ffffff !important;
+  font-family: "Inter", sans-serif !important;
+  line-height: 1.5 !important;
+  margin: 10px 0 0 !important;
+}
+
+/* Redes sociales */
+.bv-flip-back__socials {
+  display: flex !important;
+  gap: 10px !important;
+  margin-top: 12px !important;
+  justify-content: end;
+}
+
+.bv-flip-social {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: background 0.2s ease !important;
+  justify-content: end;
+}
+
+.bv-flip-social:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* ── Triggers More / Close ──
+   Mismo lugar: top-left de cada cara */
+.bv-flip-more,
+.bv-flip-close {
+  font-family: "Inter", sans-serif !important;
+  font-size: 12px !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  display: block !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.bv-flip-more {
+  color: #72757a !important;
+}
+
+.bv-flip-close {
+  color: #abb1bd !important;
+  margin: 0 !important;
+  align-self: flex-start !important;
+}
+
+.bv-flip-more:hover,
+.bv-flip-close:hover {
+  opacity: 0.7 !important;
+}
+
+/* ── Splide overrides ── */
+.bv-team-slider {
+  padding: 8px 20px 48px !important;
+  overflow: visible !important;
+  position: relative !important;
+}
+
+.bv-team-slider .splide__track {
+  overflow: visible !important;
+}
+
+.bv-team-slider .splide__slide {
+  overflow: visible !important;
+  width: calc(25% - 18px) !important; /* 4 columnas con gap de 24px */
+  margin-right: 0 !important;
+}
+
+/* Flechas fuera */
+.bv-team-slider .splide__arrow {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background: #f2f0eb !important;
+  border: 1px solid #d4cfca !important;
+  border-radius: 50% !important;
+  width: 44px !important;
+  height: 44px !important;
+  opacity: 1 !important;
+}
+
+.bv-team-slider .splide__arrow--prev {
+  left: 0 !important;
+}
+.bv-team-slider .splide__arrow--next {
+  right: 0 !important;
+}
+
+.bv-team-slider .splide__arrow:hover {
+  background: #b8935a !important;
+  border-color: #b8935a !important;
+}
+
+.bv-team-slider .splide__arrow svg {
+  fill: #1c1a17 !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+
+.bv-team-slider .splide__arrow:hover svg {
+  fill: #ffffff !important;
+}
+
+/* Dots */
+.bv-team-slider .splide__pagination {
+  bottom: 8px !important;
+  position: absolute !important;
+}
+
+.bv-team-slider .splide__pagination__page {
+  background: #c8c4bc !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: background 0.2s ease !important;
+}
+
+.bv-team-slider .splide__pagination__page.is-active {
+  background: #1c1a17 !important;
+  transform: scale(1.15) !important;
+}
+
+/* Fix Splide visibility en bv-team-slider */
+.bv-team-slider.splide {
+  visibility: visible !important;
+}
+
+.bv-team-slider .splide__slide {
+  visibility: visible !important;
+}
+
+.bv-team-slider.splide .splide__track .splide__list .splide__slide {
+  width: 314px !important;
+  max-width: 314px !important;
+  min-width: 314px !important;
+}
+
+.bv-team-slider .splide__list {
+  overflow: visible !important;
+  column-gap: 24px;
+}
+
+.bv-team-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.bv-team-prev,
+.bv-team-next {
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+  border: none !important;
+  background-color: #ececec !important;
+  background-image: unset !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #72757a !important;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+  padding: 0 !important;
+}
+
+.bv-team-prev:hover,
+.bv-team-next:hover,
+.bv-team-next:active,
+.bv-team-next:active {
+  background-color: var(--bv-gold) !important;
+  border-color: var(--bv-gold) !important;
+  color: var(--bv-black) !important;
+}
+
+.elementor-2136 .elementor-element.elementor-element-4989ea3 {
+  align-items: end;
+}
+
+.bv-team-slider .splide__arrows {
+  display: none !important;
+}
+
+/* ============================================================
+   DARTE SERIES - Sections
+   ============================================================ */
+
+.page-id-2270 h1 {
+  font-size: 3.75rem !important;
+  color: var(--bv-white) !important;
+}
+
+.page-id-2270 h5,
+.page-id-2270 h3,
+.page-id-2270 h1 {
+  font-weight: 700 !important;
+}
+
+.page-id-2270 .white-heading h2 {
+  font-family: inter !important;
+  font-weight: 600 !important;
+}
+
+.page-id-2270 h3 {
+  font-size: 2.5rem !important;
+}
+
+.page-id-2270 .round-tables-card {
+  min-height: 560px !important;
+}
+
+.page-id-2270 .round-tables-card p {
+  margin: 0 !important;
+}
+
+.page-id-2270 .card-button {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+}
+
+.page-id-2270 .card-button a,
+.page-id-2270 .middle-button a {
+  background-image: unset !important;
+  background-color: var(--bv-gold) !important;
+  color: var(--bv-black) !important;
+}
+
+/* ============================================================
+   DARTE World Tour: ExpertCast - Sections
+   ============================================================ */
+
+.page-id-2422 .btn-white a,
+.page-id-2422 .btn-white .elementor-button {
+  padding: 7.5px 20px !important;
+  background: var(--bv-white) !important;
+  color: var(--bv-black);
+}
+
+/* ============================================================
+   POLICY RESPONSES - Sections
+   ============================================================ */
+
+.page-id-2468 h1 {
+  color: var(--bv-white) !important;
+  font-size: 3.75rem !important;
+}
+
+/* ============================================================
+   POLICY RESPONSES - Sections
+   ============================================================ */
+
+.page-id-2516 h1 {
+  color: var(--bv-white) !important;
+  font-size: 3.75rem !important;
+}
+
+/* Ocultar - mostrar cards*/
+
+/* Publications — cards ocultas */
+.bv-hidden-card {
+  display: none;
+}
+
+/* Cuando se revelan */
+.bv-hidden-card.is-visible {
+  display: grid;
+  animation: bvFadeIn 0.4s ease;
+}
+
+@keyframes bvFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bv-show-more {
+  cursor: pointer;
+}
+
+/* ============================================================
+   Social Impact & Sustainability - Sections
+   ============================================================ */
+
+.page-id-2615 h1 {
+  color: var(--bv-white) !important;
+  font-size: 3.75rem !important;
+}
+
+.page-id-2615 .btn-white a,
+.page-id-2615 .btn-white .elementor-button {
+  padding: 7.5px 20px !important;
+  background: var(--bv-white) !important;
+  color: var(--bv-black);
+}
+
+/* ============================================================
+   EVENTS By BV - Sections
+   ============================================================ */
+
+.page-id-2646 h1 {
+  color: var(--bv-white) !important;
+  font-size: 3.75rem !important;
+}
+
+.page-id-2646 .divider-short {
+  width: 74px;
+  height: 2px;
+  background-color: var(--bv-gold);
+}
+
+.page-id-2646 .elementor-button {
+  background-color: var(--bv-gold) !important;
+  color: var(--bv-black) !important;
+  background-image: none !important;
+  font-weight: 600 !important;
+}
+
+.page-id-2646 .accordion summary,
+.page-id-2646 .accordion .elementor-element {
+  border: none !important;
+}
+
+.page-id-2646 .accordion summary {
+  min-height: 108px !important;
+  padding-left: 40px;
+}
+
+.page-id-2646 .accordion div.elementor-element {
+  padding-top: 0 !important;
+}
+
+/* BG Items - BLACK VOGEL PRODUCTIONS*/
+
+.page-id-2646 .accordion #e-n-accordion-item-2150 {
+  background-image: url(https://mediumseagreen-duck-613026.hostingersite.com/wp-content/uploads/2026/06/dropdown-DARTE.jpg);
+  background-size: cover;
+  margin-bottom: 24px;
+}
+.page-id-2646 .accordion #e-n-accordion-item-2151 {
+  background-image: url(https://mediumseagreen-duck-613026.hostingersite.com/wp-content/uploads/2026/06/dropdown-speaking-engagements.jpg);
+  background-size: cover;
+  margin-bottom: 24px;
+}
+.page-id-2646 .accordion #e-n-accordion-item-2152 {
+  background-image: url(https://mediumseagreen-duck-613026.hostingersite.com/wp-content/uploads/2026/06/dropdown-speaking-engagements.jpg);
+  background-size: cover;
+  margin-bottom: 24px;
+}
+
+/* BG Items - PARTNER EVENTS*/
+
+.page-id-2646 .accordion #e-n-accordion-item-1960 {
+  background-image: url(https://mediumseagreen-duck-613026.hostingersite.com/wp-content/uploads/2026/06/dropdown-DARTE.jpg);
+  background-size: cover;
+  margin-bottom: 24px;
+}
+.page-id-2646 .accordion #e-n-accordion-item-1961 {
+  background-image: url(https://mediumseagreen-duck-613026.hostingersite.com/wp-content/uploads/2026/06/dropdown-speaking-engagements.jpg);
+  background-size: cover;
+  margin-bottom: 24px;
+}
+.page-id-2646 .accordion #e-n-accordion-item-1962 {
+  background-image: url(https://mediumseagreen-duck-613026.hostingersite.com/wp-content/uploads/2026/06/dropdown-speaking-engagements.jpg);
+  background-size: cover;
+  margin-bottom: 24px;
+}
+
+.page-id-2646 .accordion .e-n-accordion-item-title-text {
+  color: var(--bv-white) !important;
+  font-weight: 600;
+}
+
+.page-id-2646 .accordion details {
+  border-radius: 22px;
+}
+
+.page-id-2646 .accordion .number {
+  background-color: var(--bv-gray);
+  padding: 10px 17px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* Número activo cuando el item está expandido */
+.page-id-2646 .accordion .e-n-accordion-item[open] .number {
+  background-color: var(--bv-gold);
+  color: var(--bv-black);
+}
+
+/* ── Nested Accordion BlackVogel Events ── */
+
+/* Ocultar SVGs default de Elementor */
+.page-id-2646 .accordion .e-n-accordion-item-title-icon .e-opened svg,
+.page-id-2646 .accordion .e-n-accordion-item-title-icon .e-closed svg {
+  display: none !important;
+}
+
+/* Círculo con chevron — estado cerrado */
+.page-id-2646 .accordion .e-n-accordion-item-title-icon .e-closed::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1L5 5L9 1' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+/* Círculo con chevron — estado abierto (rotado) */
+.page-id-2646 .accordion .e-n-accordion-item-title-icon .e-opened::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1L5 5L9 1' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(180deg);
+}
+
+.page-id-2646 .accordion .e-n-accordion-item-title-icon {
+  position: absolute;
+  right: 48px;
+  top: 36px;
+}
