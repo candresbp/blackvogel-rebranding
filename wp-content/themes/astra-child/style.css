@@ -331,7 +331,7 @@ footer p {
   border: 0;
   border-radius: 0;
   font-size: 18px;
-  line-height: 15;
+  line-height: 1.5;
   transition: border-color 0.2s ease;
 }
 
@@ -415,7 +415,7 @@ li a {
 #speaker .elementor-size-sm:hover {
   color: var(--bv-white) !important;
   border: solid 1px var(--bv-black);
-  box-shadow: 0 10 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
   transform: translateY(-1px);
 }
 
@@ -840,6 +840,13 @@ li a {
   line-height: 68px;
 }
 
+@media (max-width: 768px) {
+  #speaker h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+}
+
 #speaker #speaker-btn {
   color: var(--bv-white);
   width: 217px;
@@ -868,6 +875,12 @@ li a {
   font-size: 3.75rem !important;
 }
 
+@media (max-width: 768px) {
+  #hero-about h1 {
+    font-size: 2.25rem !important;
+  }
+}
+
 /* About */
 
 #about-about h5 {
@@ -890,6 +903,13 @@ li a {
 
 #leadership-grid-container .card-img-des-btn {
   min-width: 323px;
+}
+
+@media (max-width: 768px) {
+  #leadership-grid-container .card-img-des-btn {
+    min-width: unset;
+    width: 100%;
+  }
 }
 
 #leadership-grid-container .card-img-des-btn .e-con-full {
@@ -923,7 +943,7 @@ li a {
   .elementor-widget-container
   strong {
   text-transform: uppercase;
-  letter-spacing: 10% !important;
+  letter-spacing: 0.1em !important;
 }
 
 #leadership-grid-container
@@ -1139,7 +1159,7 @@ h4 {
   color: var(--bv-black) !important;
   border: solid 1px var(--bv-black);
   background-color: var(--bv-gold) !important;
-  box-shadow: 0 10 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
   transform: translateY(-1px);
   transition: transform 0.4s ease;
 }
@@ -1151,15 +1171,14 @@ h4 {
 /* Background*/
 
 .elementor-1301 {
-  background: url("http://blackvogel.local/wp-content/uploads/2026/05/our-services-bg-x1.jpg")
-    repeat;
+  background: url("/wp-content/uploads/2026/05/our-services-bg-x1.jpg") repeat;
 }
 
 .services-card-heading h5 {
   text-transform: uppercase;
   font-weight: 600 !important;
   font-family: Inter !important;
-  letter-spacing: 10% !important;
+  letter-spacing: 0.1em !important;
   line-height: 1.375rem !important;
   font-size: 1.25rem !important;
 }
@@ -1218,6 +1237,18 @@ h4 {
 .bv-services-slider .splide__arrow--next {
   left: calc(50% + 590px) !important;
   right: unset !important;
+}
+
+@media (max-width: 1300px) {
+  .bv-services-slider .splide__arrow--prev {
+    right: unset !important;
+    left: 8px !important;
+  }
+
+  .bv-services-slider .splide__arrow--next {
+    left: unset !important;
+    right: 8px !important;
+  }
 }
 
 /* User */
@@ -1379,7 +1410,7 @@ h4 {
 
 .bv-speak-slider .splide__arrow {
   position: absolute !important;
-  top: 40vh !important;
+  top: 40% !important;
   transform: translateY(-50%) !important;
   opacity: 1 !important;
   width: 44px !important;
@@ -1679,6 +1710,12 @@ h4 {
   cursor: default !important;
 }
 
+@media (max-width: 768px) {
+  .bv-flip-card {
+    height: 380px !important;
+  }
+}
+
 /* ── Front y Back: apilados, transición con opacidad + scale ──
    Usamos este enfoque en lugar de CSS 3D porque Elementor
    rompe el contexto preserve-3d con overflow:hidden y will-change */
@@ -1917,6 +1954,14 @@ h4 {
   min-width: 314px !important;
 }
 
+@media (max-width: 768px) {
+  .bv-team-slider.splide .splide__track .splide__list .splide__slide {
+    width: calc(100vw - 48px) !important;
+    max-width: 340px !important;
+    min-width: unset !important;
+  }
+}
+
 .bv-team-slider .splide__list {
   overflow: visible !important;
   column-gap: 24px;
@@ -1980,12 +2025,22 @@ h4 {
 }
 
 .page-id-2270 .white-heading h2 {
-  font-family: inter !important;
+  font-family: "Inter" !important;
   font-weight: 600 !important;
 }
 
 .page-id-2270 h3 {
   font-size: 2.5rem !important;
+}
+
+@media (max-width: 768px) {
+  .page-id-2270 h1 {
+    font-size: 2.25rem !important;
+  }
+
+  .page-id-2270 h3 {
+    font-size: 1.75rem !important;
+  }
 }
 
 .page-id-2270 .round-tables-card {
@@ -2029,6 +2084,12 @@ h4 {
   font-size: 3.75rem !important;
 }
 
+@media (max-width: 768px) {
+  .page-id-2468 h1 {
+    font-size: 2.25rem !important;
+  }
+}
+
 /* ============================================================
    POLICY RESPONSES - Sections
    ============================================================ */
@@ -2036,6 +2097,12 @@ h4 {
 .page-id-2516 h1 {
   color: var(--bv-white) !important;
   font-size: 3.75rem !important;
+}
+
+@media (max-width: 768px) {
+  .page-id-2516 h1 {
+    font-size: 2.25rem !important;
+  }
 }
 
 /* Ocultar - mostrar cards*/
@@ -2075,6 +2142,12 @@ h4 {
   font-size: 3.75rem !important;
 }
 
+@media (max-width: 768px) {
+  .page-id-2615 h1 {
+    font-size: 2.25rem !important;
+  }
+}
+
 .page-id-2615 .btn-white a,
 .page-id-2615 .btn-white .elementor-button {
   padding: 7.5px 20px !important;
@@ -2089,6 +2162,12 @@ h4 {
 .page-id-2646 h1 {
   color: var(--bv-white) !important;
   font-size: 3.75rem !important;
+}
+
+@media (max-width: 768px) {
+  .page-id-2646 h1 {
+    font-size: 2.25rem !important;
+  }
 }
 
 .page-id-2646 .divider-short {
