@@ -58,6 +58,9 @@ Thumbs.db
 .vscode/sftp.json
 *.log
 
+# Claude Code — configuración local de la máquina del dev
+.claude/settings.local.json
+
 # index.php placeholders de WP (no aportan nada)
 wp-content/index.php
 wp-content/themes/index.php
