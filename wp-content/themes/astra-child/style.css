@@ -2590,10 +2590,26 @@ extender background image para que cubra el texto.
 
 /* ============================================================
    SERVICES — MOBILE ≤922px
-   Las columnas se apilan verticalmente al 100% de ancho.
+   Cuando Splide está destruido, los slides se apilan.
+   Splide deja .splide__list como display:flex (CSS estático),
+   así que hay que forzar wrap + 100% sobre slides y columnas.
    ============================================================ */
 
 @media (max-width: 922px) {
+
+  .bv-services-slider .splide__track {
+    overflow: visible !important;
+  }
+
+  .bv-services-slider .splide__list {
+    flex-wrap: wrap !important;
+    transform: none !important;
+  }
+
+  .bv-services-slider .splide__slide {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+  }
 
   .bv-services-slider .slider-col-1,
   .bv-services-slider .slider-col-2 {
