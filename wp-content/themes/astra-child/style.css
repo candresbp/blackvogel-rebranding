@@ -2589,49 +2589,16 @@ extender background image para que cubra el texto.
 }
 
 /* ============================================================
-   SERVICES SLIDER — MOBILE ≤922px
-   Scroll snap horizontal: una columna (2 cards) visible a la vez.
-   El layout desktop (2 columnas, flex-wrap) no se modifica.
+   SERVICES — MOBILE ≤922px
+   Las columnas se apilan verticalmente al 100% de ancho.
    ============================================================ */
 
 @media (max-width: 922px) {
 
-  /* Clipea los slides que sobresalen */
-  .bv-services-slider {
-    overflow: hidden !important;
-  }
-
-  /* El inner pasa a ser un scroll container horizontal */
-  .bv-services-slider > .e-con-inner {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: scroll !important;
-    scroll-snap-type: x mandatory !important;
-    -webkit-overflow-scrolling: touch !important;
-    max-width: 100% !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-bottom: 40px !important;
-    gap: 0 !important;
-    scrollbar-width: none !important;
-  }
-
-  .bv-services-slider > .e-con-inner::-webkit-scrollbar {
-    display: none !important;
-  }
-
-  /* Cada columna-slide ocupa el 100% del viewport y hace snap */
   .bv-services-slider .slider-col-1,
   .bv-services-slider .slider-col-2 {
-    flex: 0 0 100% !important;
     --width: 100% !important;
     width: 100% !important;
-    min-width: 100% !important;
-    max-width: 100% !important;
-    scroll-snap-align: start !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    box-sizing: border-box !important;
   }
 
 }
