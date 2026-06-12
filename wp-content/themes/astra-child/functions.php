@@ -211,50 +211,6 @@ add_action( 'wp_footer', function() {
 
 
 // ============================================================
-// SERVICES — fix apilado vertical en mobile (Elementor sobreescribe
-// --width via inline styles después de que carga su JS)
-// ============================================================
-add_action( 'wp_footer', function() {
-    if ( ! is_page( 1301 ) ) return;
-    ?>
-    <script>
-    (function(){
-      'use strict';
-
-      var BP = 922;
-
-      function fixServicesCols() {
-        if ( window.innerWidth > BP ) return;
-
-        var cols = document.querySelectorAll(
-          '.bv-services-slider .slider-col-1, .bv-services-slider .slider-col-2'
-        );
-
-        cols.forEach(function(col) {
-          col.style.setProperty('--width',     '100%', 'important');
-          col.style.setProperty('width',       '100%', 'important');
-          col.style.setProperty('max-width',   '100%', 'important');
-          col.style.setProperty('flex-basis',  '100%', 'important');
-          col.style.setProperty('flex-shrink', '0',    'important');
-        });
-      }
-
-      /* Capturar en varios momentos para pillar el JS de Elementor */
-      document.addEventListener('DOMContentLoaded', fixServicesCols);
-      window.addEventListener('load', fixServicesCols);
-      window.addEventListener('load', function() {
-        setTimeout(fixServicesCols, 300);
-        setTimeout(fixServicesCols, 800);
-      });
-      window.addEventListener('resize', fixServicesCols);
-
-    })();
-    </script>
-    <?php
-}, 999 );
-
-
-// ============================================================
 // CACHE BUSTER — solo durante desarrollo, quitar antes de entregar
 // ============================================================
 function child_style() {
