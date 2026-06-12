@@ -2430,7 +2430,11 @@ h4 {
   top: 36px;
 }
 
-/*MOBILE*/
+/* ============================================================
+MOBILE ≤922px
+Ocultar imágenes decorativas, centrar contenido,
+extender background image para que cubra el texto.
+============================================================ */
 
 @media (max-width: 922px) {
   .ast-grid-right-section{
@@ -2440,17 +2444,7 @@ h4 {
   [data-section="section-header-mobile-trigger"] .ast-button-wrap .ast-mobile-menu-trigger-fill{
     background: var(--bv-gray-light);
   }
-
-}
-
-/* ============================================================
-   HERO SECTIONS — MOBILE ≤922px
-   Ocultar imágenes decorativas, centrar contenido,
-   extender background image para que cubra el texto.
-   ============================================================ */
-
-@media (max-width: 922px) {
-
+  
   /* ── HOMEPAGE: colapsar grid 2→1 col, ocultar pájaro ──────── */
 
   #hero {
@@ -2459,6 +2453,12 @@ h4 {
     min-height: auto !important;
     background-size: cover !important;
     background-position: center top !important;
+    border-bottom-left-radius: 64px !important;
+    border-bottom-right-radius: 64px !important;
+  }
+
+  h1 {
+    text-align: center !important;
   }
 
   /* Columna decorativa del pájaro (homepage) */
@@ -2584,6 +2584,54 @@ h4 {
     align-items: center !important;
     --align-items: center !important;
     text-align: center !important;
+  }
+
+}
+
+/* ============================================================
+   SERVICES SLIDER — MOBILE ≤922px
+   Scroll snap horizontal: una columna (2 cards) visible a la vez.
+   El layout desktop (2 columnas, flex-wrap) no se modifica.
+   ============================================================ */
+
+@media (max-width: 922px) {
+
+  /* Clipea los slides que sobresalen */
+  .bv-services-slider {
+    overflow: hidden !important;
+  }
+
+  /* El inner pasa a ser un scroll container horizontal */
+  .bv-services-slider > .e-con-inner {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: scroll !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 40px !important;
+    gap: 0 !important;
+    scrollbar-width: none !important;
+  }
+
+  .bv-services-slider > .e-con-inner::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* Cada columna-slide ocupa el 100% del viewport y hace snap */
+  .bv-services-slider .slider-col-1,
+  .bv-services-slider .slider-col-2 {
+    flex: 0 0 100% !important;
+    --width: 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    scroll-snap-align: start !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
   }
 
 }
