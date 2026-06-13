@@ -334,8 +334,36 @@ img {
   width: 80%;
 }
 
+/* Excepción: anchor links del home (#about, #our-work) que WordPress
+   marca como current-menu-item → no deben mostrar la línea roja */
+.page-id-1287 #ast-hf-menu-1 .menu-item-home.current-menu-item .menu-link::after {
+  width: 0 !important;
+}
+
 #ast-hf-menu-1 li a:hover {
   font-weight: 600;
+}
+
+/* ── MENU MOBILE — reemplazar morado por gold en tap/focus ───── */
+@media (max-width: 922px) {
+  .ast-menu-toggle,
+  #ast-hf-menu-1 a {
+    -webkit-tap-highlight-color: rgba(203, 161, 110, 0.2) !important;
+  }
+
+  .ast-menu-toggle:focus,
+  .ast-menu-toggle:active,
+  #ast-hf-menu-1 a:focus,
+  #ast-hf-menu-1 a:active {
+    color: var(--bv-gold) !important;
+    outline-color: var(--bv-gold) !important;
+    background-color: transparent !important;
+  }
+
+  .ast-menu-toggle:focus svg path,
+  .ast-menu-toggle:active svg path {
+    fill: var(--bv-gold) !important;
+  }
 }
 
 /* ============================================================
