@@ -335,31 +335,52 @@ img {
 }
 
 /* Excepción: anchor links del home (#about, #our-work) que WordPress
-   marca como current-menu-item → no deben mostrar la línea roja */
+   marca como current-menu-item → suprimir línea roja siempre-activa */
 .page-id-1287 #ast-hf-menu-1 .menu-item-home.current-menu-item .menu-link::after {
   width: 0 !important;
+}
+
+/* Restaurar hover en esos mismos items */
+.page-id-1287 #ast-hf-menu-1 .menu-item-home.current-menu-item .menu-link:hover::after {
+  width: 80% !important;
 }
 
 #ast-hf-menu-1 li a:hover {
   font-weight: 600;
 }
 
-/* ── MENU MOBILE — reemplazar morado por gold en tap/focus ───── */
+/* ── MENU MOBILE — reemplazar morado por gold ─────────────────
+   Astra agrega clase .focus al <li> via JS en mobile (no solo
+   pseudo :focus), y el .ast-menu-toggle tiene estados propios.
+   Se neutraliza tap-highlight y se cubre todo estado activo.     */
 @media (max-width: 922px) {
+  /* Eliminar tap highlight nativo (fuente principal del morado) */
+  #ast-hf-menu-1 a,
   .ast-menu-toggle,
-  #ast-hf-menu-1 a {
-    -webkit-tap-highlight-color: rgba(203, 161, 110, 0.2) !important;
+  .main-navigation a {
+    -webkit-tap-highlight-color: transparent !important;
   }
 
-  .ast-menu-toggle:focus,
-  .ast-menu-toggle:active,
+  /* Pseudo-clases + clase .focus que Astra añade via JS al <li> */
+  #ast-hf-menu-1 a:hover,
   #ast-hf-menu-1 a:focus,
-  #ast-hf-menu-1 a:active {
+  #ast-hf-menu-1 a:active,
+  #ast-hf-menu-1 .menu-item.focus > .menu-link,
+  #ast-hf-menu-1 .menu-item.focus > a,
+  .ast-menu-toggle:hover,
+  .ast-menu-toggle:focus,
+  .ast-menu-toggle:active {
     color: var(--bv-gold) !important;
-    outline-color: var(--bv-gold) !important;
     background-color: transparent !important;
+    outline-color: var(--bv-gold) !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
   }
 
+  /* SVG de las flechas de submenú */
+  #ast-hf-menu-1 a:focus svg path,
+  #ast-hf-menu-1 a:active svg path,
+  #ast-hf-menu-1 .menu-item.focus svg path,
   .ast-menu-toggle:focus svg path,
   .ast-menu-toggle:active svg path {
     fill: var(--bv-gold) !important;
