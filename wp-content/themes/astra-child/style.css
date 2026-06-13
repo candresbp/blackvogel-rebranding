@@ -2617,4 +2617,32 @@ extender background image para que cubra el texto.
     width: 100% !important;
   }
 
+  /* Ocultar spacers dentro de las cajas de servicios */
+  .bv-services-slider .elementor-spacer-inner {
+    display: none !important;
+  }
+
+  /* Padding interno de 20px en las cajas */
+  .slider-col-1-card,
+  .slider-col-2-card {
+    padding: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+}
+
+/* ============================================================
+   GLOBAL — MOBILE ≤922px
+   Padding lateral para todas las páginas: evita que los
+   contenedores lleguen hasta el borde de la pantalla.
+   ============================================================ */
+
+@media (max-width: 922px) {
+
+  .e-con.e-parent > .e-con-inner {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+
 }
