@@ -2694,4 +2694,12 @@ extender background image para que cubra el texto.
     box-sizing: border-box !important;
   }
 
+  /* Botones centrados globalmente en mobile */
+  .elementor-widget-button .elementor-widget-container {
+    text-align: center !important;
+  }
+
+  .elementor-1287 .elementor-element.elementor-element-cd0d97a:not(.elementor-motion-effects-element-type-background){
+    background-position: center;
+  }
 }
